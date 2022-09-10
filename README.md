@@ -28,7 +28,7 @@ $ python3.9 --version
 ### After Installing Initial Requirements
 Clone this repository:
 ```
-$ git clone <tic-tac-toe URL>
+$ git clone https://github.com/miaisakovic/tic-tac-toe.git
 ``` 
 When asked to enter credentials, input your username and personal access token.
 

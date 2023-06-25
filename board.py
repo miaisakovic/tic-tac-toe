@@ -3,6 +3,15 @@ import tkinter as tk
 
 
 class Board(tk.Tk):
+    '''
+    A Board object starts the game and manages its appearance based on player input 
+
+    Attributes:
+        title: The title of the game window 
+        status: A label that specifies the status of the game 
+        board: A 3x3 2D list that will contain the buttons that make up the board
+        game: A GameLogic object 
+    '''
     def __init__(self):
         super().__init__()
         self.title("Tic-tac-toe")
@@ -14,6 +23,9 @@ class Board(tk.Tk):
         self.__start_game()
 
     def __create_board(self):
+        '''
+        Set up and display all widgets for the game board 
+        '''
         for col in range(3):
             self.grid_columnconfigure(col, weight=1)
         for row in range(3):
@@ -35,10 +47,22 @@ class Board(tk.Tk):
         self.status.pack()
 
     def __start_game(self):
+        '''
+        Start the game with the AI player going first 
+        '''
         row, col = self.game.get_best_move()
         self.__click(row, col)
 
     def __click(self, row, col):
+        '''
+        Based on the row and column of the button that was clicked, 
+        place the current player's mark on it (if it is empty). 
+        In addition, update the status label if there is a winner or tie.  
+
+        Args:
+            row: An integer that specifies the row number of the button that was clicked
+            col: An integer that specifies the column number of the button that was clicked
+        '''
         button = self.board[row][col]
 
         # Ensure the button has not been previously clicked

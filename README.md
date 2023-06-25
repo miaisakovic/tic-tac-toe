@@ -1,5 +1,5 @@
 # Unbeatable Tic-tac-toe
-A tic-tac-toe game developed with Tkinter and the minimax algorithm.
+A tic-tac-toe game developed with Tkinter and the Minimax algorithm.
 
 ## Table of Contents
 * [Setup](#setup)
